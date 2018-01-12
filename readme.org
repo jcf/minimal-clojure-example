@@ -1,0 +1,39 @@
+* Minimal Clojure Example
+With the release of [[https://https://clojure.org/guides/deps_and_cli][tools.deps]] we can now run Clojure code without the
+additional complexity of tools like [[http://boot-clj.com/][Boot]] and/or [[https://leiningen.org/][Leiningen]].
+
+This repo contains a single Clojure file that makes use of the excellent [[http://aleph.io/][Aleph]]
+to send an HTTPS request to my favourite website.
+
+* Let me try
+#+begin_src shell
+  git clone https://github.com/jcf/minimal-clojure-example
+  cd minimal-clojure-example
+  clj -m hello
+#+end_src
+
+You should see a pretty-printed HTTP response something like this:
+
+#+begin_src clojure
+{:request-time 107,
+ :aleph/keep-alive? true,
+ :headers
+ {"x-cache" "Hit from cloudfront",
+  "server" "AmazonS3",
+  "age" "38",
+  "via"
+  "1.1 e20d69d2fa2e195b7488aaa53586c336.cloudfront.net (CloudFront)",
+  "content-type" "text/html",
+  "content-length" "1221",
+  "connection" "keep-alive",
+  "accept-ranges" "bytes",
+  "etag" "\"e8c68729f87c3e33f7e7231afcec349f\"",
+  "date" "Fri, 12 Jan 2018 14:33:59 GMT",
+  "last-modified" "Tue, 03 May 2016 21:49:35 GMT",
+  "x-amz-cf-id"
+  "7rKrGfMRsw-BrlOfj3p5F7JptwX14NcqPW4zT_tdHjoOnd8pMq6jeA=="},
+ :status 200,
+ :connection-time 224,
+ :body
+ "<!DOCTYPE html>\n<html><head><meta content=\"initial-scale=1.0,width=device-width\" name=\"viewport\"><title>jamesconroyfinn.com</title><link href=\"/0db4f54dd9d7/avatar.jpg\" rel=\"icon\"><link href=\"/bundles/38a1a7ed0c4b/app.css\" rel=\"stylesheet\" /></head><body><header style=\"background-color:#4183c4;height:3.5em\"></header><main class=\"container\"><div style=\"text-align:center\"><img height=\"100\" src=\"/0db4f54dd9d7/avatar.jpg\" style=\"border-radius:50%;border:4px solid white;margin:-50px auto 0\" width=\"100\"></div><h1>About</h1><p>My name is <b>James Conroy-Finn</b>, and I'm a person who can help plan, build, and deliver ideas.</p><p>I've worked for a variety of companies and have used a wide array of technologies, languages, and techniques to build products quickly, and collaboratively.</p><p>I write <a href=\"https://github.com/jcf\">code</a> when time permits, listen to <a href=\"http://www.last.fm/user/jamesconroyfinn\">music</a>, and sometimes post <a href=\"https://instagram.com/jcf/\">pictures</a> of what I'm up to.</p><p>I'm always interested in having a chat about ideas and opportunities so please send me an <a href=\"mailto:james@logi.cl\">email</a> if you think I might be able to help.</p></main></body></html>"}
+#+end_src
